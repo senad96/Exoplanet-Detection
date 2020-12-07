@@ -11,7 +11,7 @@ First of all, I’m going to apply different feature engineering techniques to t
 
 ## Dataset
 
-the dataset that we've used is a kaggle dataset, 
+The dataset that we've used is a kaggle dataset, 
 link : https://www.kaggle.com/keplersmachines/kepler-labelled-time-series-data
 which contains data of the luminosity flux of over 5000 stars. Precisely the dataset has dimensions (5087, 3198), which the first column is the target value.
 An important thing to consider is the fact that the dataset is unbalanced. There are very few positive examples, less than 1% of the entire (training) dataset and the same in the test set. 
@@ -20,7 +20,7 @@ An important thing to consider is the fact that the dataset is unbalanced. There
 
 ## Machine Learning Model
 
-for this task ( version v1 ) we used a CNN and a SVC. CNN ( Convolution Nerual Newtork ) is probably one of the most famous nerual network in deep learning; 
+For this task ( version v1 ) we used a CNN and a SVC. CNN ( Convolution Nerual Newtork ) is probably one of the most famous nerual network in deep learning; 
 SVC ( Support Vector Classification ) is a Machine Learing model that has good performance and could approach the results of deep neural network.
 
 The problem of the exoplanet detection through the brighntess flux analysis is a problem called in machine learing TSC ( Time Series Classification ).
