@@ -58,7 +58,8 @@ We've presented all the performance calssfication metrics:
 
 ## Future work
 
-Since this application is a standard in astrophysics, our models can be used on new and larger datasets by changing only the model input; ( which are set to manage time series data long 3197 ).
+Since this application is a standard in astrophysics, our models can be used on new and larger datasets by changing only the model input; 
+( which are set to manage time series data long 3197 ).
 
 
 
