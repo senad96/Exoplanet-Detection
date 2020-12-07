@@ -13,7 +13,7 @@ First of all, I’m going to apply different feature engineering techniques to t
 
 the dataset that we've used is a kaggle dataset, 
 link : https://www.kaggle.com/keplersmachines/kepler-labelled-time-series-data
-which contains data of the luminosity flux of over 5000 stars. Precisely the dataset has dimensions (5087, 3198).
+which contains data of the luminosity flux of over 5000 stars. Precisely the dataset has dimensions (5087, 3198), which the first column is the target value.
 An important thing to consider is the fact that the dataset is unbalanced. There are very few positive examples, less than 1% of the entire (training) dataset and the same in the test set. 
 
 
@@ -40,13 +40,20 @@ The file ##FDS_project.py is a script that run all the operations.
 
 # Testing and Performance evaluation
 
-We present all the performance calssfication metrics: 
+We've presented all the performance calssfication metrics: 
 
 1) Accuracy
 2) Recall
 3) Precision
 4) F1-score
 5) Roc-curve
+
+
+
+# Future work
+
+Since this application is a standard in astrophysics, our models can be used on new and larger datasets by changing only the model input; (which are set to manage time series data long 3197 ).
+
 
 
 
