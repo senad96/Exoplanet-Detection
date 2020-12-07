@@ -17,7 +17,7 @@ The dataset that we've used is a kaggle dataset :
 link dataset : https://www.kaggle.com/keplersmachines/kepler-labelled-time-series-data
 
 This contains data of the luminosity flux of over 5000 stars. Precisely the dataset has dimensions (5087, 3198), which the first column is the target value.
-An important thing to consider is the fact that the dataset is unbalanced. There are very few positive examples, less than 1% of the entire (training) dataset and the same in the test set. 
+An important thing to consider is the fact that the dataset is unbalanced. There are very few positive examples, less than 1% of the entire training set and the same in the test set. 
 
 
 
@@ -36,8 +36,8 @@ According some scientific papaer the best models for this type of problem are CN
 
 
 A Gauss filter (with sigma = 7) was applied to the signals to remove some error from the signals and then we applied the FFT to the data to obtain the frequency domain. Machine learning models worked with data in the frequency domain.
-In the file ##models.py you can find the CNN model and the SVC model.
-The file ##FDS_project.py is a script that run all the operations. 
+In the file [models.py](https://github.com/senad96/exoplanet-detection-via-DeepLearning_v1/blob/main/models.py) you can find the CNN model and the SVC model.
+The file [FDS_project.py](https://github.com/senad96/exoplanet-detection-via-DeepLearning_v1/blob/main/FDS_project.py) is a script that run all the operations. 
 
 
 
