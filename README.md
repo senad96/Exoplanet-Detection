@@ -1,4 +1,4 @@
-# exoplanet-detection-via-DeepLearning_v1
+# Exoplanet detection via DeepLearning_v1
 
 
 # fsigofs
