@@ -5,15 +5,18 @@ Scientists use data collected by space telescopes to find new information that a
 
 The data collected by spatial telescopes is huge and the new Artificial Intelligence techniques allow an advanced data analysis and powerful predictive models. In this project we used a dataset from the kaggle site, which coming from the Mikulski Archive, a large archive of astronomical data.
 
-First of all, I’m going to apply different feature engineering techniques to the dataset and then we'll present 2 models ( SVC and a FCN ) which will be used for classifying the brightness flux of stars. In particular, the models were used to analyze the curve light of over 5000 stars trying to reach a high accuracy, in the end we will show which are the best models for the classification of this problem.
+First of all, I’m going to apply different feature engineering techniques to the dataset and then we'll present 2 models ( SVC and a FCN ) which will be used for classifying the brightness flux of stars. 
+In particular, the models were used to analyze the curve light of over 5000 stars trying to reach a high accuracy, in the end we will show which are the best models for the classification of this problem.
 
 
 
 ## Dataset
 
-The dataset that we've used is a kaggle dataset, 
-link : https://www.kaggle.com/keplersmachines/kepler-labelled-time-series-data
-which contains data of the luminosity flux of over 5000 stars. Precisely the dataset has dimensions (5087, 3198), which the first column is the target value.
+The dataset that we've used is a kaggle dataset :
+
+link dataset : https://www.kaggle.com/keplersmachines/kepler-labelled-time-series-data
+
+This contains data of the luminosity flux of over 5000 stars. Precisely the dataset has dimensions (5087, 3198), which the first column is the target value.
 An important thing to consider is the fact that the dataset is unbalanced. There are very few positive examples, less than 1% of the entire (training) dataset and the same in the test set. 
 
 
@@ -52,7 +55,7 @@ We've presented all the performance calssfication metrics:
 
 ## Future work
 
-Since this application is a standard in astrophysics, our models can be used on new and larger datasets by changing only the model input; (which are set to manage time series data long 3197 ).
+Since this application is a standard in astrophysics, our models can be used on new and larger datasets by changing only the model input; ( which are set to manage time series data long 3197 ).
 
 
 
