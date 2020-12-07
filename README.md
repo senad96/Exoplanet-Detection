@@ -36,8 +36,11 @@ According some scientific papaer the best models for this type of problem are CN
 
 
 A Gauss filter (with sigma = 7) was applied to the signals to remove some error from the signals and then we applied the FFT to the data to obtain the frequency domain. Machine learning models worked with data in the frequency domain.
-In the file [models.py](https://github.com/senad96/exoplanet-detection-via-DeepLearning_v1/blob/main/models.py) you can find the CNN model and the SVC model.
-The file [FDS_project.py](https://github.com/senad96/exoplanet-detection-via-DeepLearning_v1/blob/main/FDS_project.py) is a script that run all the operations. 
+
+#### In the file : 
+
+1) [models.py](https://github.com/senad96/exoplanet-detection-via-DeepLearning_v1/blob/main/models.py) you can find the CNN model and the SVC model.
+2) [FDS_project.py](https://github.com/senad96/exoplanet-detection-via-DeepLearning_v1/blob/main/FDS_project.py) you can find the script that run all the operations. To run the code you have to run only this file.
 
 
 
