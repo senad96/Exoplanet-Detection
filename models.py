@@ -11,57 +11,9 @@ from tensorflow.keras import layers
 from tensorflow.keras.preprocessing import sequence
 
 
-
+#create the neural network
 def FCN_model():
     
-    
-    '''
-    model = tf.keras.Sequential()
-    
-    model.add(layers.Conv1D(filters=64, kernel_size=3, strides=1, padding = 'same' ,input_shape=(1,3197)))
-   
-    model.add(layers.BatchNormalization())
-    
-    model.add(layers.Activation('relu'))
-    
-
-
-    model.add(layers.Conv1D(filters=128, kernel_size=3, strides=1, padding = 'same'))
-   
-    model.add(layers.BatchNormalization())
-    
-    model.add(layers.Activation('relu'))
-    
-    
-    
-    
-    model.add(layers.Conv1D(filters=64, kernel_size=3, strides=1, padding = 'same'))
-   
-    model.add(layers.BatchNormalization())
-    
-    model.add(layers.Activation('relu'))
-    
-    
-    
-    
-    
-    model.add(layers.Conv1D(filters=1, kernel_size=3, strides=1, padding = 'same'))
-   
-    model.add(layers.BatchNormalization())
-    
-    model.add(layers.Activation('relu'))
-    
-    
-    
-    
-    
-    model.add(layers.GlobalAveragePooling1D())
-    model.add(layers.Softmax())
-    
-    
-    return model
-    
-    '''
     
     model = tf.keras.Sequential()
     
@@ -99,76 +51,13 @@ def FCN_model():
     print(model.summary())
     
     return model
-    
-    
-    
-    '''
-    input_seq = layers.Input(shape=(3197,1))
-
-    # first convolution block
-    x = layers.Conv1D(filters=64, kernel_size=8, padding = 'same',kernel_regularizer='l2')(input_seq)
-    
-    x = layers.BatchNormalization()(x)
-    
-    output_block1 = layers.Activation('relu')(x)
-    
-    
-    
-    #second block 
-    x = layers.Conv1D(filters=120, kernel_size=8, padding = 'same',kernel_regularizer='l2')(output_block1)
-    
-    x = layers.BatchNormalization()(x)
-    
-    output_block2 = layers.Activation('relu')(x)
-    
-    
-    
-    # third block 
-    x = layers.Conv1D(filters=120, kernel_size=3, strides=1, padding = 'same',kernel_regularizer='l2')(output_block2)
-    
-    x = layers.BatchNormalization()(x)
-    
-    output_block3 = layers.Activation('relu')(x)
-    
-    
-    
-    
-    # fourth block 
-    x = layers.Conv1D(filters=24, kernel_size=3, strides=1, padding = 'same',kernel_regularizer='l2')(output_block3)
-    
-    x = layers.BatchNormalization()(x)
-    
-    x = layers.Activation('relu')(x)
-    
-    output_block4 = layers.Flatten()(x)
-
-    
 
 
-    #fifth layer
-    
-    x = layers.Dense(12, activation = 'relu')(output_block4)
-    
-    output_block5 = layers.Dense(1, activation = 'sigmoid')(x)
-    
-    
-    
-    # last block
-    
-    x = layers.Dense(12, activation = 'relu')(output_block4)
-    
-    x = layers.Dense(4,activation = 'relu')(x)
-    
-    x = layers.Dense(1,activation = 'sigmoid')(x)
-    
-    
-    #pred = layers.Activation('sigmoid')(x)
-    
-    model = tf.keras.Model(inputs = input_seq, outputs=output_block5)
-    
-    print(model.summary())
-    '''
-    
 
-    return model
+#create the SVC model
+def SVC_model():
     
+    #model = 
+    
+    
+    return #model
