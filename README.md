@@ -9,7 +9,7 @@ First of all, I’m going to apply different feature engineering techniques to t
 
 
 
-# Dataset
+## Dataset
 
 the dataset that we've used is a kaggle dataset, 
 link : https://www.kaggle.com/keplersmachines/kepler-labelled-time-series-data
@@ -18,7 +18,7 @@ An important thing to consider is the fact that the dataset is unbalanced. There
 
 
 
-# Machine Learning Model
+## Machine Learning Model
 
 for this task ( version v1 ) we used a CNN and a SVC. CNN ( Convolution Nerual Newtork ) is probably one of the most famous nerual network in deep learning; 
 SVC ( Support Vector Classification ) is a Machine Learing model that has good performance and could approach the results of deep neural network.
@@ -29,7 +29,7 @@ According some scientific papaer the best models for this type of problem are CN
 
 
 
-# Code and implementation
+## Code and implementation
 
 
 A Gauss filter (with sigma = 7) was applied to the signals to remove some error from the signals and then we applied the FFT to the data to obtain the frequency domain. Machine learning models worked with data in the frequency domain.
@@ -38,7 +38,7 @@ The file ##FDS_project.py is a script that run all the operations.
 
 
 
-# Testing and Performance evaluation
+## Testing and Performance evaluation
 
 We've presented all the performance calssfication metrics: 
 
@@ -50,7 +50,7 @@ We've presented all the performance calssfication metrics:
 
 
 
-# Future work
+## Future work
 
 Since this application is a standard in astrophysics, our models can be used on new and larger datasets by changing only the model input; (which are set to manage time series data long 3197 ).
 
