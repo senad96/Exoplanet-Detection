@@ -5,7 +5,7 @@ Scientists use data collected by space telescopes to find new information that a
 
 The data collected by spatial telescopes is huge and the new Artificial Intelligence techniques allow an advanced data analysis and powerful predictive models. In this project we used a dataset from the kaggle site, which coming from the Mikulski Archive, a large archive of astronomical data.
 
-First of all, I’m going to apply different feature engineering techniques to the dataset and then we'll present 2 models ( SVC and a FCN ) which will be used for classifying the brightness flux of stars. 
+First of all, I’m going to apply different feature engineering techniques to the dataset and then we'll present 2 models ( SVC and a CNN ) which will be used for classifying the brightness flux of stars. 
 In particular, the models were used to analyze the curve light of over 5000 stars trying to reach a high accuracy, in the end we will show which are the best models for the classification of this problem.
 
 
