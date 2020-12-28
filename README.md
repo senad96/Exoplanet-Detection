@@ -38,7 +38,7 @@ The architecure of the CNN was taken from a reasearch paper while the SVC model 
 ## Code and implementation
 
 
-A Gauss filter (with sigma = 7) was applied to the signals to remove some error from the signals and then we applied the FFT to the data to obtain the frequency domain. Machine learning models worked with data in the frequency domain.
+A Gauss filter (with sigma = 5) was applied to the signals to remove some error from the signals and then we applied the FFT to the data to obtain the frequency domain. Machine learning models worked with data in the frequency domain.
 
 #### In the file : 
 
