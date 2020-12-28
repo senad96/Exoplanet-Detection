@@ -55,15 +55,27 @@ We've presented all the performance calssfication metrics:
 2) Recall
 3) Precision
 4) F1-score
-5) Roc-curve
+5) Confusion Matrix
 
 
 
 ## Future work
 
-Since this application is a standard in astrophysics, our models can be used on new and larger datasets by changing only the model input; 
-( which are set to manage time series data long 3197 ).
-For more details you can read the report file where all the work is explained better.
+Future Work
+
+In the field of applied astrophysics the transit detection of exoplanets is an important technique for the discovery of new planets.
+It would be very interesting to test our models ( in particular CNN ) in new even larger datasets. Recall that in the MAST archive ( Mikulski Archive for Space Telescopes ) it is possible to obtain the light curves of thousands of other stars collected by the kepler telescope. However these data are not in a form directly usable by a machine learning model and therefore would require to be downloaded and processed to extract the light curves.
+In this project due to a limited time it was not possible to test the models with new datasets. In case someone would like to do this the code has been constructed to be able to change a number of reduced variables to adapt the models to new datasets. In particular the things to change in the code would be:
+
+
+1) Put the new datasets in the variable "data_train", "data_test"
+2) Check the target label in the training set and test set is the first column
+3) The CNN input number. In our case the network accepts 3197 long sequences.
+4) In other cases it could be less or more.
+   NOTE : In the scenario where the signals are of different lengths, it is possible to make them all of the same length by choosing a fixed number of values     
+          after he application of FFT ( for example frequencies with greater amplitude).
+5) Eventually change the hyper-parameters ( sigma of gaussian filter, layers of CNN etc. ) 
+
 
 
 
