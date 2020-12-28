@@ -1,4 +1,4 @@
-# Exoplanet detection via DeepLearning v1
+# Exoplanet detection via Machine Learning
 
 
 Scientists use data collected by space telescopes to find new information that allows us to learn more about the universe. In particular, the NASA Kepler space telescope has been collecting light from thousands of stars for many years to detect the presence of exoplanets. An exoplanet is a planet that orbits around a star, just like the Earth. However, these systems are hundreds or thousands of light years away from Earth, so it is essential to have tools that allow us to understand if the presence of exoplanets is likely.
@@ -63,6 +63,9 @@ We've presented all the performance calssfication metrics:
 
 Since this application is a standard in astrophysics, our models can be used on new and larger datasets by changing only the model input; 
 ( which are set to manage time series data long 3197 ).
+For more details you can read the report file where all the work is explained better.
+
+
 
 
 
