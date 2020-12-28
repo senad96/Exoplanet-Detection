@@ -24,7 +24,6 @@ from sklearn.metrics import plot_confusion_matrix
 from sklearn.preprocessing import normalize
 
 from imblearn.over_sampling import RandomOverSampler
-from sklearn.metrics import make_confusion_matrix
 
 
 
@@ -134,7 +133,7 @@ plt.plot( frequency, data_train_fft[1] )
 
 
 #oversampling technique to the data
-rm = RandomOverSampler(sampling_strategy=0.45)
+rm = RandomOverSampler(sampling_strategy=0.5)
 data_train_ovs, y_train_ovs = rm.fit_sample( data_train_fft, y_train)
 
 
@@ -150,8 +149,8 @@ print("After oversampling, counts of label '0': {}".format(sum(y_train_ovs==0)))
 data_train_ovs = np.asarray(data_train_ovs)
 data_test_fft = np.asarray(data_test_fft)
 
-data_train_ovs = data_train_ovs.reshape((data_train_ovs.shape[0], data_train_ovs.shape[1], 1))
-data_test_fft = data_test_fft.reshape((data_test_fft.shape[0], data_test_fft.shape[1], 1))
+data_train_ovs_nn = data_train_ovs.reshape((data_train_ovs.shape[0], data_train_ovs.shape[1], 1))
+data_test_fft_nn = data_test_fft.reshape((data_test_fft.shape[0], data_test_fft.shape[1], 1))
 
 
 
@@ -160,14 +159,14 @@ data_test_fft = data_test_fft.reshape((data_test_fft.shape[0], data_test_fft.sha
 #create F.C.N model and run it
 model = m.FCN_model()
 
-model.compile(loss='binary_crossentropy', optimizer=tf.keras.optimizers.SGD(learning_rate=0.01),metrics=['accuracy'])
+model.compile(loss='binary_crossentropy', optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),metrics=['accuracy'])
 
-tf.keras.utils.plot_model( model, to_file="model.png", show_shapes=True,show_layer_names=True)
+print(model.summary())
 
-evolve = model.fit(data_train_ovs, y_train_ovs , epochs=1, batch_size = 8, validation_data=(data_test_fft, y_test))
+history = model.fit(data_train_ovs_nn, y_train_ovs , epochs=15, batch_size = 10, validation_data=(data_test_fft_nn, y_test))
 
 
-#save the model
+#save the model if you want
 #model.save("/home/senad/DataSet/exoplanet_model_2")
 
 
@@ -175,38 +174,63 @@ evolve = model.fit(data_train_ovs, y_train_ovs , epochs=1, batch_size = 8, valid
 #model = tf.keras.models.load_model("/home/senad/DataSet/exoplanet_model_2")
 
 
+acc = history.history['accuracy']
+#acc_val = history.history['val_accuracy']
+epochs = range(1, len(acc)+1)
+plt.plot(epochs, acc, 'b', label='accuracy_train')
+#plt.plot(epochs, acc_val, 'g', label='accuracy_val')
+plt.title('accuracy')
+plt.xlabel('epochs')
+plt.ylabel('value of accuracy')
+plt.legend()
+plt.grid()
+plt.show()
 
-#predict the test set
-y_test_pred = model.predict(data_test_fft)
+
+
+
+loss = history.history['loss']
+#loss_val = history.history['val_loss']
+epochs = range(1, len(acc)+1)
+plt.plot(epochs, loss, 'b', label='loss_train')
+#plt.plot(epochs, loss_val, 'g', label='loss_val')
+plt.title('loss')
+plt.xlabel('epochs')
+plt.ylabel('value of loss')
+plt.legend()
+plt.grid()
+plt.show()
+
+
+
+
+#predict the test set and plot results
+y_test_pred = model.predict(data_test_fft_nn)
 y_test_pred = (y_test_pred > 0.5)
 
-
-
-
-#TODO Calculate the performance of the FCN
 
 accuracy = accuracy_score(y_test, y_test_pred)
 print("accuracy : ", accuracy)
 
 print(classification_report(y_test, y_test_pred, target_names=["NO exoplanet confirmed","YES exoplanet confirmed"]))
 
-#Roc_curve = 
-#print roc curve.....
-
-conf_matrix = confusion_matrix(int(y_test), int(y_test_pred))
-sns.heatmap(conf_matrix, annot=True, cmap='Blues',categories = ["NO planet","Planet confirmed"])
+conf_matrix = confusion_matrix([int(x) for x in y_test ], [int(y) for y in y_test_pred ])
+sns.heatmap(conf_matrix, annot=True, cmap='Blues')
 
 
 
 
-#create the SVC model with sklearn
+#create SVC model, predict and plot the results
+SVC = m.SVC_model()
+SVC.fit(data_train_ovs, y_train_ovs)
+
+y_pred_svc = SVC.predict(data_test_fft)
 
 
+print(classification_report(y_test, y_pred_svc, target_names=["NO exoplanet confirmed","YES exoplanet confirmed"]))
 
 
-
-
-
-
+conf_matrix = confusion_matrix([int(x) for x in y_test ], [int(y) for y in y_pred_svc ])
+sns.heatmap(conf_matrix, annot=True, cmap='Blues')
 
 

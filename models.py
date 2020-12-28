@@ -11,44 +11,48 @@ from tensorflow.keras import layers
 from tensorflow.keras.preprocessing import sequence
 
 
+from sklearn.model_selection import GridSearchCV
+from sklearn.svm import SVC
+
+
 #create the neural network
 def FCN_model():
     
     
     model = tf.keras.Sequential()
     
-    
-    
-    model.add(layers.Conv1D(filters=128, kernel_size=12, activation='relu', input_shape=(3197,1)))
+    #change the input shape if you have sequences less long
+    model.add(layers.Conv1D(filters=256, kernel_size=8, activation='relu', input_shape=(3197,1)))
     model.add(layers.MaxPool1D(strides=5))
     model.add(layers.BatchNormalization())
     
     
-    model.add(layers.Conv1D(filters=256, kernel_size=5, activation='relu'))
+    model.add(layers.Conv1D(filters=340, kernel_size=6, activation='relu'))
     model.add(layers.MaxPool1D(strides=5))
     model.add(layers.BatchNormalization())
     
     
-    
-    model.add(layers.Conv1D(filters=128, kernel_size=4, activation='relu'))
+    model.add(layers.Conv1D(filters=256, kernel_size=4, activation='relu'))
     model.add(layers.MaxPool1D(strides=5))
+    model.add(layers.BatchNormalization())
+    
+    
     model.add(layers.Flatten())
-    model.add(layers.BatchNormalization())
     model.add(layers.Dropout(0.3))
     
     
     
-    model.add(layers.Dense(36, activation='relu'))
-    model.add(layers.Dropout(0.25))
+    model.add(layers.Dense(24, activation='relu'))
+    model.add(layers.Dropout(0.3))
     
     
     model.add(layers.Dense(12, activation='relu'))
     
     
+    model.add(layers.Dense(8, activation = 'relu'))
+    
+    
     model.add(layers.Dense(1, activation='sigmoid'))
-    
-    
-    print(model.summary())
     
     return model
 
@@ -57,7 +61,12 @@ def FCN_model():
 #create the SVC model
 def SVC_model():
     
-    #model = 
+    tuned_parameters = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],
+                     'C': [1, 10, 100, 1000]},
+                    {'kernel': ['linear'], 'C': [1, 10, 100, 1000]}]
+
+    
+    clf = GridSearchCV( SVC(), param_grid = tuned_parameters,scoring = 'recall')
     
     
-    return #model
+    return clf
