@@ -57,7 +57,10 @@ We've presented all the performance calssfication metrics:
 4) F1-score
 5) Confusion Matrix
 
+## Result
 
+Our CNN has achieved incredible results. With all the problems written above with a sufficient number of epochs (according to our tests they must be greater than 15) it is possible to reach an accuracy of 100% ( 5 exoplanet in the test set are been predicted correclty ).
+However the SVC fails the recognition of 4 exoplanets ( 1 is predicted correctly ).
 
 ## Future work
 
