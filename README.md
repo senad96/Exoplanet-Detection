@@ -24,7 +24,7 @@ An important thing to consider is the fact that the dataset is unbalanced. There
 ## Machine Learning Model
 
 For this task, we used a CNN and a SVC. CNN ( Convolution Neural Newtork ) is probably one of the most famous nerual network in deep learning; 
-SVC ( Support Vector Classification ) is a Machine Learing model that has good performance and could approach the results of deep neural network.
+SVC ( Support Vector Classifier ) is a Machine Learing model that has good performance and could approach the results of deep neural network.
 
 
 The problem of the exoplanet detection through the brighntess flux analysis is a problem called in Machine Learing TSC ( Time Series Classification ).
@@ -38,7 +38,7 @@ The architecure of the CNN was taken from a reasearch paper while the SVC model 
 ## Code and implementation
 
 
-A Gauss filter (with sigma = 5) was applied to the signals to remove some error from the signals and then we applied the FFT to the data to obtain the frequency domain. Machine learning models worked with data in the frequency domain.
+A gaussian filter (with sigma = 5) was applied to the signals to remove some error from the signals and then we applied the FFT to the data to obtain the frequency domain. Machine learning models worked with data in the frequency domain.
 
 #### In the file : 
 
