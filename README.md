@@ -23,7 +23,7 @@ An important thing to consider is the fact that the dataset is unbalanced. There
 ![ singal1 ](https://github.com/senad96/exoplanet-detection-via-DeepLearning_v1/blob/main/Images/signal1.png?raw=true)
 
 
-![ singal2 ](https://github.com/senad96/exoplanet-detection-via-DeepLearning_v1/blob/main/Images/singal1_gauss.png?raw=true)
+![ singal2 ](https://github.com/senad96/exoplanet-detection-via-DeepLearning_v1/blob/main/Images/singall_gauss.png?raw=true)
 
 
 ## Machine Learning Model
