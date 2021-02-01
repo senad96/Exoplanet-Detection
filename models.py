@@ -16,13 +16,14 @@ from sklearn.svm import SVC
 
 
 #create the neural network
-def FCN_model():
+def FCN_model(len_seq):
     
+    # len_seq = the size of the input sequences
     
     model = tf.keras.Sequential()
     
     #change the input shape if you have sequences less long
-    model.add(layers.Conv1D(filters=256, kernel_size=8, activation='relu', input_shape=(3197,1)))
+    model.add(layers.Conv1D(filters=256, kernel_size=8, activation='relu', input_shape=(len_seq,1)))
     model.add(layers.MaxPool1D(strides=5))
     model.add(layers.BatchNormalization())
     
@@ -41,10 +42,8 @@ def FCN_model():
     model.add(layers.Dropout(0.3))
     
     
-    
     model.add(layers.Dense(24, activation='relu'))
     model.add(layers.Dropout(0.3))
-    
     
     model.add(layers.Dense(12, activation='relu'))
     
