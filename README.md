@@ -18,8 +18,12 @@ The dataset that we've used is a kaggle dataset :
 link dataset : https://www.kaggle.com/keplersmachines/kepler-labelled-time-series-data
 
 This contains data of the luminosity flux of over 5000 stars. Precisely the dataset has dimensions (5087, 3198), which the first column is the target value.
-An important thing to consider is the fact that the dataset is unbalanced. There are very few positive examples, less than 1% of the entire training set and the same in the test set. 
+An important thing to consider is the fact that the dataset is unbalanced. There are very few positive examples, less than 1% of the entire training set and the same in the test set. Here below we can see an example of signals and the respective smoothed version.
 
+![ singal1 ](https://github.com/senad96/exoplanet-detection-via-DeepLearning_v1/blob/main/Images/signal1.png?raw=true)
+
+
+![ singal2 ](https://github.com/senad96/exoplanet-detection-via-DeepLearning_v1/blob/main/Images/singal1_gauss.png?raw=true)
 
 
 ## Machine Learning Model
