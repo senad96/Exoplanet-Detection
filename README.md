@@ -33,9 +33,11 @@ SVC ( Support Vector Classifier ) is a Machine Learing model that has good perfo
 
 
 The problem of the exoplanet detection through the brighntess flux analysis is a problem called in Machine Learing TSC ( Time Series Classification ).
-According some scientific papaer the best models for this type of problem are CNN/FCN, ResNet; In this project we considered CNN and we added the SVC model as well.
+According some scientific paper the best models for this type of problem are CNN/FCN, ResNet; In this project we considered CNN and we added the SVC model as well.
 
 The architecure of the CNN was taken from a reasearch paper while the SVC model was built by us.
+
+Above you can find a Report when you can read all the details and the results, even the References.
 
 
 
