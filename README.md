@@ -50,7 +50,7 @@ A gaussian filter (with sigma = 5) was applied to the signals to remove some err
 #### In the file : 
 
 1) [models.py](https://github.com/senad96/exoplanet-detection-via-DeepLearning_v1/blob/main/models.py) you can find the CNN model and the SVC model.
-2) [FDS_project.py](https://github.com/senad96/exoplanet-detection-via-DeepLearning_v1/blob/main/FDS_project.py) you can find the script that run all the operations. To run the code you have to run only this file.
+2) [project_main.py](https://github.com/senad96/exoplanet-detection-via-DeepLearning_v1/blob/main/project_main.py) you can find the script that run all the operations. To run the code you have to run only this file.
 
 
 
