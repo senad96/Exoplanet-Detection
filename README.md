@@ -32,8 +32,8 @@ For this task, we used a CNN and a SVC. CNN ( Convolution Neural Newtork ) is pr
 SVC ( Support Vector Classifier ) is a Machine Learing model that has good performance and could approach the results of deep neural network.
 
 
-The problem of the exoplanet detection through the brighntess flux analysis is a problem called in Machine Learing TSC ( Time Series Classification ).
-According some scientific paper the best models for this type of problem are CNN/FCN, ResNet; In this project we considered CNN and we added the SVC model as well.
+The problem of the exoplanet detection through the brighntess flux analysis is a TSC ( Time Series Classification ) probelm
+According some scientific paper the best models for this kind of problem are CNN/FCN, ResNet; In this project we considered a standard CNN ( with our own architecture ).
 
 The architecure of the CNN was taken from a reasearch paper while the SVC model was built by us.
 
