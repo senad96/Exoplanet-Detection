@@ -30,13 +30,6 @@ An important thing to consider is the fact that the dataset is unbalanced. There
 
 For this task, we used a CNN and a SVC. CNN ( Convolution Neural Newtork ) is probably one of the most famous nerual network in deep learning; 
 SVC ( Support Vector Classifier ) is a Machine Learing model that has good performance and could approach the results of deep neural network.
-
-
-The problem of the exoplanet detection through the brighntess flux analysis is a TSC ( Time Series Classification ) probelm
-According some scientific paper the best models for this kind of problem are CNN/FCN, ResNet; In this project we considered a standard CNN ( with our own architecture ).
-
-The architecure of the CNN was taken from a reasearch paper while the SVC model was built by us.
-
 Above you can find a Report when you can read all the details and the results, even the References.
 
 
@@ -45,7 +38,7 @@ Above you can find a Report when you can read all the details and the results, e
 ## Code and implementation
 
 
-A gaussian filter (with sigma = 5) was applied to the signals to remove some error from the signals and then we applied the FFT to the data to obtain the frequency domain. Machine learning models worked with data in the frequency domain.
+A gaussian filter (with sigma = 5) was applied to the signals to remove some noise from the signals and then we applied the FFT to the data to obtain the frequency domain. Machine learning models work with data in the frequency domain.
 
 #### In the file : 
 
@@ -56,17 +49,11 @@ A gaussian filter (with sigma = 5) was applied to the signals to remove some err
 
 ## Testing and Performance evaluation
 
-We've presented all the performance calssfication metrics: 
-
-1) Accuracy
-2) Recall
-3) Precision
-4) F1-score
-5) Confusion Matrix
+We've presented all the performance calssfication metrics: Accuracy, Recall etc.
 
 ## Result
 
-The CNN has achieved incredible results. With all the problems written above with a sufficient number of epochs (according to our tests they must be greater than 15) the model is able to detect 5 exoplanet in the test set ( 100 % accuracy ).
+The CNN has achieved good results. With all the problems written above with a sufficient number of epochs (according to our tests they must be greater than 15) the model is able to detect 5 exoplanet in the test set ( 100 % accuracy ).
 However the SVC fails the recognition of 4 exoplanets ( 1 is predicted correctly ).
 
 
@@ -75,7 +62,7 @@ However the SVC fails the recognition of 4 exoplanets ( 1 is predicted correctly
 ## Future work
 
 In the field of applied astrophysics the transit detection of exoplanets is an important technique for the discovery of new planets.
-It would be very interesting to test our models ( in particular CNN ) in new even larger datasets. Recall that in the MAST archive ( Mikulski Archive for Space Telescopes ) it is possible to obtain the light curves of thousands of other stars collected by the kepler telescope. However these data are not in a form directly usable by a machine learning model and therefore would require to be downloaded and processed to extract the light curves.
+It would be very interesting to test our models ( in particular CNN ) in new larger datasets. Recall that in the MAST archive ( Mikulski Archive for Space Telescopes ) it is possible to obtain the light curves of thousands of other stars collected by the kepler telescope. However these data are not in a form directly usable by a machine learning model and therefore would require to be downloaded and processed to extract the light curves.
 In this project due to a limited time it was not possible to test the models with new datasets. In case someone would like to do this the code has been constructed to be able to change a number of reduced variables to adapt the models to new datasets. 
 
 #### In particular the things to change in the code would be:
